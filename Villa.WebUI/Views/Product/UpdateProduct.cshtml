@@ -1,0 +1,42 @@
+﻿@model UpdateProductDto
+@{
+    ViewData["Title"] = "Update Product";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<form method="post">
+    <input type="hidden" asp-for="Id" />
+    <label>Image Url</label>
+    <input type="text" asp-for="ImageUrl" class="form-control" />
+    <br />
+    <label>Category</label>
+    <select asp-for="Category" class="form-control">
+        <option value="Modern">Modern</option>
+        <option value="Roof">Roof</option>
+        <option value="Luxury">Luxury</option>
+    </select>
+    <br />
+    <label>Price</label>
+    <input type="text" asp-for="Price" class="form-control" />
+    <br />
+    <label>Title</label>
+    <input type="text" asp-for="Title" class="form-control" />
+    <br />
+    <label>Bedroom Count</label>
+    <input type="text" asp-for="BedroomCount" class="form-control" />
+    <br />
+    <label>Bathroom Count</label>
+    <input type="text" asp-for="BathroomCount" class="form-control" />
+    <br />
+    <label>Area</label>
+    <input type="text" asp-for="Area" class="form-control" />
+    <br />
+    <label>Floor</label>
+    <input type="text" asp-for="Floor" class="form-control" />
+    <br />
+    <label>Parking Count</label>
+    <input type="text" asp-for="ParkingCount" class="form-control" />
+    <br />
+    <button class="btn btn-outline-dark">Kaydet</button>
+</form>
+

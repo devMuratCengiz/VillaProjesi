@@ -1,0 +1,32 @@
+﻿@model List<ResultVideoDto>
+
+<div class="video section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 offset-lg-4">
+                <div class="section-heading text-center">
+                    <h6>| Video View</h6>
+                    
+                </div>
+            </div>
+            @foreach (var item in Model)
+            {
+                <iframe width="560" height="400" src="@item.VideoUrl"
+                        title="YouTube video player" frameborder="0" allow="accelerometer;
+                    autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;
+                    web-share" allowfullscreen></iframe>
+            }
+        </div>
+    </div>
+</div>
+
+<@* div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 offset-lg-1">
+                
+
+            </div>
+        </div>
+    </div>
+</div> *@

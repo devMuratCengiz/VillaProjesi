@@ -1,0 +1,64 @@
+﻿@model List<ResultSubHeaderDto>
+@{
+    ViewData["Title"] = "SubHeader";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table table-hover table-bordered">
+    @{
+        int count = 0;
+    }
+    <tr>
+        <th>#</th>
+        <th>Address</th>
+        <th>Email</th>
+        <th>Facebook</th>
+        <th>Twitter</th>
+        <th>Linkedn</th>
+        <th>Instagram</th>
+
+    </tr>
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <th>@count</th>
+            <td>@item.Address</td>
+            <td>@item.Email</td>
+            <td><a href="@item.Facebook" target="_blank">Facebook</a></td>
+            <td><a href="@item.Twitter" target="_blank">Twitter</a></td>
+            <td><a href="@item.Linkedn" target="_blank">Linkedn</a></td>
+            <td><a href="@item.Instagram" target="_blank">Instagram</a></td>
+
+            <td>
+                <button onclick="deleteSubHeader(this)" id="@item.Id" class="btn btn-outline-danger">Sil</button>
+
+                <a asp-controller="SubHeader" asp-action="UpdateSubHeader" asp-route-id="@item.Id"
+                   class="btn btn-outline-info">Güncelle</a>
+            </td>
+        </tr>
+    }
+</table>
+<a asp-controller="SubHeader" asp-action="CreateSubHeader"
+   class="btn btn-outline-dark">Ekle</a>
+<script>
+    function deleteSubHeader(button) {
+        var id = button.getAttribute("id");
+
+        Swal.fire
+            ({
+                title: "Are you sure?",
+                text: "You won't be able to revert this!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Yes, delete it!"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = "/SubHeader/DeleteSubHeader/" + id;
+                }
+            });
+    }
+</script>
+

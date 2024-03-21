@@ -1,0 +1,46 @@
+﻿@model ResultProductDto
+@{
+    ViewData["Title"] = "Product Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table table-striped">
+    <tr>
+        <th><img src="@Model.ImageUrl" style="height:200px;width:200px" /></th>
+        
+    </tr>
+    <tr>
+        <th>Category</th>
+        <td>@Model.Category</td>
+    </tr>
+    <tr>
+        <th>Price</th>
+        <td>@Model.Price</td>
+    </tr>
+    <tr>
+        <th>Title</th>
+        <td>@Model.Title</td>
+    </tr>
+    <tr>
+        <th>Bedroom Count</th>
+        <td>@Model.BedroomCount</td>
+    </tr>
+    <tr>
+        <th>Bathroom Count</th>
+        <td>@Model.BathroomCount</td>
+    </tr>
+    <tr>
+        <th>Area</th>
+        <td>@Model.Area</td>
+    </tr>
+    <tr>
+        <th>Floor</th>
+        <td>@Model.Floor</td>
+    </tr>
+    <tr>
+        <th>Parking Count</th>
+        <td>@Model.ParkingCount</td>
+    </tr>
+</table>
+<a asp-controller="Message" asp-action="Index" class="btn btn-dark">Back to Product</a>
+
